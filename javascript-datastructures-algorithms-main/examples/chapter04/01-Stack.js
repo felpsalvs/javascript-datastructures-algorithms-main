@@ -7,9 +7,9 @@ const { Stack } = PacktDataStructuresAlgorithms;
 const stack = new Stack(); // new StackArray();
 
 // using WeakMap to store Stack items we ensure true privacy
-// console.log(Object.getOwnPropertyNames(stack));
-// console.log(Object.keys(stack));
-// console.log(stack.items);
+console.log(Object.getOwnPropertyNames(stack));
+console.log(Object.keys(stack));
+console.log(stack.items);
 
 console.log('stack.isEmpty() => ', stack.isEmpty()); // outputs true
 

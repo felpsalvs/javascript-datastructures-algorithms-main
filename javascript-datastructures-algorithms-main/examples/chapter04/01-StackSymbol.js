@@ -39,6 +39,8 @@ class Stack {
 }
 
 const stack = new Stack();
+stack.push(5);
+stack.push(8);
 const objectSymbols = Object.getOwnPropertySymbols(stack);
 console.log(objectSymbols.length); // 1
 console.log(objectSymbols); // [Symbol()]

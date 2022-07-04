@@ -1,33 +1,24 @@
 // @ts-check
 
 
-const _items = new WeakMap();
+const items = new WeakMap();
 const _count = new WeakMap();
 
 class Stack {
   constructor() {
-    _count.set(this, 0);
-    _items.set(this, {});
+    items.set(this, []);
   }
 
   push(element) {
-    const items = _items.get(this);
-    const count = _count.get(this);
-    items[count] = element;
-    _count.set(this, count + 1);
+    const s = items.get(this);
+    const r = _count.get(this);
+    s.push(element);
   }
 
   pop() {
-    if (this.isEmpty()) {
-      return undefined;
-    }
-    const items = _items.get(this);
-    let count = _count.get(this);
-    count--;
-    _count.set(this, count);
-    const result = items[count];
-    delete items[count];
-    return result;
+    const s = items.get(this);
+    const r = s.pop();
+    return r;
   }
 
   peek() {

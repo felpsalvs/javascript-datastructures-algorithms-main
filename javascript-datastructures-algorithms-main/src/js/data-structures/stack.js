@@ -6,6 +6,8 @@ export default class Stack {
     this.items = {};
   }
 
+   
+// adicionar um item ao topo da pilha
   push(element) {
     this.items[this.count] = element;
     this.count++;
