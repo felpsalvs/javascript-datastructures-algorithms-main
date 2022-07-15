@@ -11,6 +11,7 @@ class Stack {
 
   push(element) {
     const s = items.get(this);
+    // @ts-ignore
     const r = _count.get(this);
     s.push(element);
   }
@@ -25,7 +26,8 @@ class Stack {
     if (this.isEmpty()) {
       return undefined;
     }
-    const items = _items.get(this);
+    // @ts-ignore
+    const items = items.get(this);
     const count = _count.get(this);
     return items[count - 1];
   }
@@ -43,14 +45,15 @@ class Stack {
         this.pop();
       } */
     _count.set(this, 0);
-    _items.set(this, {});
+    items.set(this, {});
   }
 
   toString() {
     if (this.isEmpty()) {
       return '';
     }
-    const items = _items.get(this);
+    // @ts-ignore
+    const items = items.get(this);
     const count = _count.get(this);
     let objString = `${items[0]}`;
     for (let i = 1; i < count; i++) {

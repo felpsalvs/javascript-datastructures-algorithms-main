@@ -6,7 +6,7 @@ export default class Stack {
     this.items = {};
   }
 
-   
+
 // adicionar um item ao topo da pilha
   push(element) {
     this.items[this.count] = element;
@@ -22,7 +22,7 @@ export default class Stack {
     delete this.items[this.count];
     return result;
   }
-
+// verificar se um item está na pilha
   peek() {
     if (this.isEmpty()) {
       return undefined;
